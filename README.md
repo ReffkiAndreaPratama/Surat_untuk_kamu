@@ -8,25 +8,25 @@ Sebuah halaman web romantis yang dibuat dengan React, Tailwind CSS, dan Framer M
 
 | Fitur | Deskripsi |
 |---|---|
-| 🎬 **Hero Section** | Tampilan pembuka sinematik dengan animasi heartbeat dan teks gradient |
-| 💌 **Love Message** | Kartu kutipan cinta dengan animasi slide masuk bergantian |
-| 🌹 **Romantic Cards** | Tiga kartu bertema Cinta, Kenangan, dan Harapan dengan efek hover |
-| ❤️ **Love Button** | Tombol interaktif yang memunculkan ledakan hati saat diklik |
-| ⏳ **Countdown** | Hitung mundur / hitung maju real-time untuk momen spesial (hari jadian, pertama bertemu, anniversary) |
-| 📸 **Gallery** | Grid foto kenangan dengan lightbox, navigasi prev/next, dan fitur upload foto sendiri |
+| 🎬 **Hero Section** | Tampilan pembuka sinematik dengan animasi heartbeat, teks gradient, dan garis dekoratif |
+| 💌 **Love Message** | Tiga kartu kutipan cinta dengan animasi slide masuk bergantian (kiri-kanan) |
+| 🌹 **Romantic Cards** | Tiga kartu bertema Cinta, Kenangan, dan Harapan dengan efek hover scale + float |
+| ❤️ **Love Button** | Tombol interaktif yang memunculkan 18 hati meledak ke segala arah saat diklik |
+| ⏳ **Countdown** | Hitung mundur / hitung maju real-time (hari, jam, menit, detik) untuk 3 momen spesial |
+| 📸 **Gallery** | Grid foto 2×3 dengan lightbox fullscreen, navigasi prev/next, dan upload foto dari perangkat |
 | 🎵 **Music Player** | Pemutar musik latar romantis dengan animasi equalizer, auto-play saat interaksi pertama |
-| 💫 **Floating Hearts** | Hati-hati melayang di latar belakang secara terus-menerus |
-| ✨ **Sparkle Effect** | Efek bintang kecil yang muncul mengikuti kursor |
-| 🌌 **Parallax Background** | Latar belakang dengan orb cahaya yang bergerak mengikuti scroll |
+| 💫 **Floating Hearts** | Hati-hati melayang dari bawah ke atas layar secara terus-menerus dengan ukuran & kecepatan acak |
+| ✨ **Sparkle Effect** | Bintang-bintang kecil SVG yang muncul dan menghilang secara acak di seluruh layar |
+| 🌌 **Parallax Background** | Latar belakang dengan 4 orb cahaya beranimasi, grid overlay halus, dan vignette atas-bawah |
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **React 19** — UI library
-- **Vite** — build tool & dev server
-- **Tailwind CSS 3** — utility-first styling
-- **Framer Motion** — animasi dan transisi
+- **Vite 8** — build tool & dev server
+- **Tailwind CSS 3** — utility-first styling dengan custom color palette `romantic` dan custom animations (`heartbeat`, `float`, `blob`, `shimmer`, dll.)
+- **Framer Motion 12** — animasi dan transisi (spring, whileInView, AnimatePresence)
 - **Google Fonts** — Dancing Script, Playfair Display, Inter
 
 ---
@@ -137,6 +137,20 @@ Ganti nilai `MUSIC_URL` di `src/components/MusicPlayer.jsx` dengan URL file audi
 
 ```js
 const MUSIC_URL = 'https://example.com/your-song.mp3'
+```
+
+### Ganti Warna Tema
+
+Palet warna romantis didefinisikan di `tailwind.config.js` dan `src/index.css`. Ubah nilai CSS variable berikut di `src/index.css` untuk mengganti tema warna secara global:
+
+```css
+:root {
+  --romantic-light:  #FFE4E8;
+  --romantic-soft:   #FFB3C6;
+  --romantic-medium: #FF6B9D;
+  --romantic-deep:   #C9184A;
+  --romantic-dark:   #590D22;
+}
 ```
 
 ---
